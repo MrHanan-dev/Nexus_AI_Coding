@@ -4,15 +4,10 @@ import {
   SiReact,
   SiTypescript,
   SiPython,
-  SiCplusplus,
-  SiC,
   SiPhp,
   SiRuby,
   SiGo,
   SiRust,
-  SiKotlin,
-  SiSwift,
-  SiDart,
   SiHtml5,
   SiCss3,
   SiSass,
@@ -31,10 +26,7 @@ import {
   SiExpress,
   SiSpring,
   SiLaravel,
-  SiFlutter,
   SiMysql,
-  SiPostgresql,
-  SiMongodb,
   SiDocker,
   SiGit
 } from '@/lib/icons';
@@ -67,13 +59,13 @@ export const fileExtensionIcons: Record<string, IconComponent> = {
   'groovy': SiJavascript,
   
   // C/C++
-  'c': SiC,
-  'cpp': SiCplusplus,
-  'cxx': SiCplusplus,
-  'cc': SiCplusplus,
-  'h': SiC,
-  'hpp': SiCplusplus,
-  'hxx': SiCplusplus,
+  'c': FiFile,
+  'cpp': FiFile,
+  'cxx': FiFile,
+  'cc': FiFile,
+  'h': FiFile,
+  'hpp': FiFile,
+  'hxx': FiFile,
   
   // C#
   'cs': FiFile,
@@ -158,7 +150,7 @@ export const languageIcons: Record<string, IconComponent> = {
   'spring': SiSpring,
   'laravel': SiLaravel,
 
-  'flutter': SiFlutter,
+  'flutter': FiFile,
 };
 
 // Framework/Library specific colors
@@ -238,8 +230,8 @@ export function getSupportedLanguagesWithIcons(): Array<{
     { name: 'python', displayName: 'Python', icon: SiPython, color: languageColors.python },
     { name: 'java', displayName: 'Java', icon: SiJavascript, color: languageColors.java },
     { name: 'csharp', displayName: 'C#', icon: FiFile, color: languageColors.csharp },
-    { name: 'cpp', displayName: 'C++', icon: SiCplusplus, color: languageColors.cpp },
-    { name: 'c', displayName: 'C', icon: SiC, color: languageColors.c },
+    { name: 'cpp', displayName: 'C++', icon: FiFile, color: languageColors.cpp },
+    { name: 'c', displayName: 'C', icon: FiFile, color: languageColors.c },
     { name: 'php', displayName: 'PHP', icon: SiPhp, color: languageColors.php },
     { name: 'ruby', displayName: 'Ruby', icon: SiRuby, color: languageColors.ruby },
     { name: 'go', displayName: 'Go', icon: SiGo, color: languageColors.go },
