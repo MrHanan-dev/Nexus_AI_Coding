@@ -161,20 +161,11 @@ export {
   SiStripe,
   SiPaypal,
   // Additional language icons - only the ones that exist
-  SiJava,
-  SiCplusplus,
-  SiC,
-  SiKotlin,
-  SiSwift,
-  SiDart,
-  SiFlutter,
   SiNodedotjs,
   SiExpress,
   SiDjango,
   SiFlask,
   SiFastapi,
   SiSpring,
-  SiLaravel,
-  SiPostgresql,
-  SiMongodb
+  SiLaravel
 } from 'react-icons/si';
