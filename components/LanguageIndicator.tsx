@@ -22,27 +22,6 @@ const LanguageIndicator: React.FC<LanguageIndicatorProps> = ({
   const extension = filename.split('.').pop()?.toLowerCase() || '';
   const color = getLanguageColor(extension);
   
-  // Fallback if IconComponent is undefined
-  if (!IconComponent) {
-    return (
-      <div className={`flex items-center gap-1 ${className}`}>
-        <div 
-          className="flex-shrink-0 rounded"
-          style={{ 
-            width: size, 
-            height: size, 
-            backgroundColor: color 
-          }}
-        />
-        {showName && (
-          <span className="text-xs text-gray-300">
-            {getLanguageName(extension)}
-          </span>
-        )}
-      </div>
-    );
-  }
-  
   // Get language name from extension
   const getLanguageName = (ext: string): string => {
     const languageMap: Record<string, string> = {
@@ -79,6 +58,27 @@ const LanguageIndicator: React.FC<LanguageIndicatorProps> = ({
     
     return languageMap[ext] || ext.toUpperCase();
   };
+  
+  // Fallback if IconComponent is undefined
+  if (!IconComponent) {
+    return (
+      <div className={`flex items-center gap-1 ${className}`}>
+        <div 
+          className="flex-shrink-0 rounded"
+          style={{ 
+            width: size, 
+            height: size, 
+            backgroundColor: color 
+          }}
+        />
+        {showName && (
+          <span className="text-xs text-gray-300">
+            {getLanguageName(extension)}
+          </span>
+        )}
+      </div>
+    );
+  }
 
   const languageName = getLanguageName(extension);
 
