@@ -15,7 +15,6 @@ import {
   FiAward,
   FiClock,
   FiBarChart,
-  FiPieChart,
   FiGrid,
   FiList,
   FiEye,
