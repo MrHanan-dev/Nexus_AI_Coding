@@ -89,8 +89,7 @@ export class FileOperations {
     return new Promise((resolve) => {
       const input = document.createElement('input');
       input.type = 'file';
-      // @ts-expect-error - webkitdirectory is not in the types but is supported
-      input.webkitdirectory = true;
+      (input as any).webkitdirectory = true;
       input.multiple = true;
       
       input.onchange = async (e) => {

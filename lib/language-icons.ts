@@ -35,7 +35,7 @@ import { FiFile, FiFolder } from '@/lib/icons';
 import { ComponentType } from 'react';
 
 // Type for icon components
-type IconComponent = ComponentType<{ className?: string; size?: number }>;
+type IconComponent = ComponentType<{ className?: string; size?: number; color?: string }>;
 
 // File extension to icon mapping
 export const fileExtensionIcons: Record<string, IconComponent> = {

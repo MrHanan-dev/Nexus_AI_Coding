@@ -50,7 +50,7 @@ const LanguageList: React.FC<LanguageListProps> = ({
                <IconComponent 
                  className="flex-shrink-0" 
                  size={iconSize}
-                 style={{ color: lang.color }}
+                 color={lang.color}
                />
                {showNames && (
                  <span className="text-gray-300">{lang.displayName}</span>
@@ -93,7 +93,7 @@ const LanguageList: React.FC<LanguageListProps> = ({
              <IconComponent 
                className="mb-1" 
                size={iconSize}
-               style={{ color: lang.color }}
+               color={lang.color}
              />
              {showNames && (
                <span className="text-xs text-gray-300">{lang.displayName}</span>

@@ -207,7 +207,7 @@ export function detectLanguage(
     
     for (const file of projectContext.files) {
       const ext = file.substring(file.lastIndexOf('.'));
-      const lang = detection.fileExtensions[ext];
+      const lang = detection.fileExtensions[ext as keyof typeof detection.fileExtensions];
       
       if (lang) {
         fileExtensions.set(lang, (fileExtensions.get(lang) || 0) + 1);

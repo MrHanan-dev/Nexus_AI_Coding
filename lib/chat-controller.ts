@@ -496,7 +496,7 @@ export class ChatController {
 • Users: ${status.userCount}
 
 📈 **Learning Progress:**
-${insights.userProgress.map(user => 
+${insights.userProgress.map((user: { id: string; skill_level: string; mastered_concepts: number; areas_of_improvement: number }) => 
   `• User ${user.id}: ${user.skill_level} (${user.mastered_concepts} mastered, ${user.areas_of_improvement} improving)`
 ).join('\n')}
 
@@ -564,7 +564,7 @@ ${insights.improvementSuggestions.map(suggestion => `• ${suggestion}`).join('\
 🧠 **Brain Learning Insights**
 
 📊 **User Progress:**
-${insights.userProgress.map(user => 
+${insights.userProgress.map((user: { id: string; skill_level: string; mastered_concepts: number; areas_of_improvement: number }) => 
   `👤 **User ${user.id}:**\n` +
   `   • Skill Level: ${user.skill_level}\n` +
   `   • Mastered Concepts: ${user.mastered_concepts}\n` +

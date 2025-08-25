@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { appConfig } from '@/config/app.config';
 import { Button } from '@/components/ui/button';
@@ -198,7 +198,7 @@ interface ChatMessage {
   };
 }
 
-export default function AISandboxPage() {
+function AISandboxPage() {
   const [sandboxData, setSandboxData] = useState<SandboxData | null>(null);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({ text: 'Not connected', active: false });
@@ -4561,5 +4561,16 @@ ${analysis.suggestions.length > 0 ? analysis.suggestions.slice(0, 3).map(suggest
         </div>
       </div>
     </div>
+  );
+}
+
+// Wrapper component to handle search params with Suspense
+export default function Page() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+      <div className="text-white text-lg">Loading Nexus AI...</div>
+    </div>}>
+      <AISandboxPage />
+    </Suspense>
   );
 }
