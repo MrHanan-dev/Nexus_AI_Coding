@@ -178,7 +178,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/MrHanan-dev/Nexus_AI_Coding/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/MrHanan-dev/Nexus_AI_Coding/discussions)
-- **Email**: [Your Email]
+- **Email**: [muhammadhanan23230@gmail.com]
 
 ---
 
