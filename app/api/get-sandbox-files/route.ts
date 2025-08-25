@@ -18,12 +18,12 @@ export async function GET() {
 
     console.log('[get-sandbox-files] Fetching and analyzing file structure...');
     
-    // Get all React/JS/CSS files
+    // Get all files (React/JS/CSS/Python/HTML/etc)
     const result = await global.activeSandbox.runCode(`
 import os
 import json
 
-def get_files_content(directory='/home/user/app', extensions=['.jsx', '.js', '.tsx', '.ts', '.css', '.json']):
+def get_files_content(directory='/home/user/app', extensions=['.jsx', '.js', '.tsx', '.ts', '.css', '.json', '.py', '.html', '.htm', '.xml', '.yaml', '.yml', '.md', '.txt', '.sh', '.bat', '.ps1', '.php', '.rb', '.java', '.c', '.cpp', '.h', '.cs', '.go', '.rs', '.swift', '.kt', '.scala', '.clj', '.hs', '.ml', '.fs', '.vb', '.sql', '.r', '.m', '.pl', '.lua', '.tcl', '.sh', '.bash', '.zsh', '.fish', '.config', '.ini', '.toml', '.env']):
     files_content = {}
     
     for root, dirs, files in os.walk(directory):
@@ -106,6 +106,26 @@ print(json.dumps(result))
         
         // Identify App.jsx
         if (relativePath === 'src/App.jsx' || relativePath === 'App.jsx') {
+          fileManifest.entryPoint = fileManifest.entryPoint || fullPath;
+        }
+      }
+      
+      // Handle Python files
+      if (relativePath.match(/\.py$/)) {
+        fileInfo.type = 'utility';
+        
+        // Identify Python entry point
+        if (relativePath === 'main.py' || relativePath === 'app.py' || relativePath === 'index.py') {
+          fileManifest.entryPoint = fileManifest.entryPoint || fullPath;
+        }
+      }
+      
+      // Handle HTML files
+      if (relativePath.match(/\.html?$/)) {
+        fileInfo.type = 'page';
+        
+        // Identify main HTML template
+        if (relativePath === 'index.html' || relativePath === 'templates/index.html') {
           fileManifest.entryPoint = fileManifest.entryPoint || fullPath;
         }
       }
