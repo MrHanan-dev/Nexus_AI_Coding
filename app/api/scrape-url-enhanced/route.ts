@@ -27,18 +27,18 @@ export async function POST(request: NextRequest) {
       }, { status: 400 });
     }
     
-    console.log('[scrape-url-enhanced] Scraping with Firecrawl:', url);
-    
-    const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY;
-    if (!FIRECRAWL_API_KEY) {
-      throw new Error('FIRECRAWL_API_KEY environment variable is not set');
-    }
-    
-    // Make request to Firecrawl API with maxAge for 500% faster scraping
-    const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+    console.log('[scrape-url-enhanced] Scraping with NexusAI:', url);
+
+  const NEXUSAI_API_KEY = process.env.NEXUSAI_API_KEY;
+  if (!NEXUSAI_API_KEY) {
+    throw new Error('NEXUSAI_API_KEY environment variable is not set');
+  }
+
+  // Make request to NexusAI API with maxAge for 500% faster scraping
+  const nexusaiResponse = await fetch('https://api.nexusai.dev/v1/scrape', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${FIRECRAWL_API_KEY}`,
+        'Authorization': `Bearer ${NEXUSAI_API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -57,12 +57,12 @@ export async function POST(request: NextRequest) {
       })
     });
     
-    if (!firecrawlResponse.ok) {
-      const error = await firecrawlResponse.text();
-      throw new Error(`Firecrawl API error: ${error}`);
+        if (!nexusaiResponse.ok) {
+      const error = await nexusaiResponse.text();
+      throw new Error(`NexusAI API error: ${error}`);
     }
-    
-    const data = await firecrawlResponse.json();
+
+    const data = await nexusaiResponse.json();
     
     if (!data.success || !data.data) {
       throw new Error('Failed to scrape content');
@@ -98,13 +98,13 @@ ${sanitizedMarkdown}
         url
       },
       metadata: {
-        scraper: 'firecrawl-enhanced',
+        scraper: 'nexusai-enhanced',
         timestamp: new Date().toISOString(),
         contentLength: formattedContent.length,
         cached: data.data.cached || false, // Indicates if data came from cache
         ...metadata
       },
-      message: 'URL scraped successfully with Firecrawl (with caching for 500% faster performance)'
+              message: 'URL scraped successfully with NexusAI (with caching for 500% faster performance)'
     });
     
   } catch (error) {
