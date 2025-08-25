@@ -1415,7 +1415,8 @@ It's better to have 3 complete files than 10 incomplete files.`
         
         // Stream the response and parse for packages in real-time
         try {
-          for await (const textPart of result.textStream) {
+          if (result && typeof result === 'object' && 'textStream' in result && result.textStream) {
+            for await (const textPart of result.textStream as AsyncIterable<string>) {
           const text = textPart || '';
           generatedCode += text;
           currentFile += text;
@@ -1518,6 +1519,7 @@ It's better to have 3 complete files than 10 incomplete files.`
             currentFilePath = '';
           }
           }
+        }
         } catch (streamError) {
           console.error('[generate-ai-code-stream] Streaming error:', streamError);
           await sendProgress({ type: 'error', error: `Streaming failed: ${streamError.message}` });
