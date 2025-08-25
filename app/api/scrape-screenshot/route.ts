@@ -8,11 +8,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'URL is required' }, { status: 400 });
     }
 
-    // Use Firecrawl API to capture screenshot
-    const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+      // Use NexusAI API to capture screenshot
+  const nexusaiResponse = await fetch('https://api.nexusai.dev/v1/scrape', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.FIRECRAWL_API_KEY}`,
+        'Authorization': `Bearer ${process.env.NEXUSAI_API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -30,12 +30,12 @@ export async function POST(req: NextRequest) {
       })
     });
 
-    if (!firecrawlResponse.ok) {
-      const error = await firecrawlResponse.text();
-      throw new Error(`Firecrawl API error: ${error}`);
+    if (!nexusaiResponse.ok) {
+      const error = await nexusaiResponse.text();
+      throw new Error(`NexusAI API error: ${error}`);
     }
 
-    const data = await firecrawlResponse.json();
+    const data = await nexusaiResponse.json();
     
     if (!data.success || !data.data?.screenshot) {
       throw new Error('Failed to capture screenshot');
