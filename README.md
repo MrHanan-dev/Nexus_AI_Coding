@@ -1,347 +1,184 @@
-# Nexus AI - Advanced AI-Powered Code Generation Platform
+# Nexus AI - AI-Powered Code Generation Platform
 
 **The intelligent nexus between your ideas and working code. Generate, edit, and deploy applications with AI assistance.**
 
-![Nexus AI Demo](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZtaHFleGRsMTNlaWNydGdianI4NGQ4dHhyZjB0d2VkcjRyeXBucCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZFVLWMa6dVskQX0qu1/giphy.gif)
+![Nexus AI Platform](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![AI Powered](https://img.shields.io/badge/AI-Powered-10B981?style=for-the-badge&logo=openai)
 
-## 🚀 Revolutionary Features That Make Us #1
+## 🚀 What is Nexus AI?
 
-### **🧠 AI-Powered Code Prediction & Auto-Completion**
-- **Intelligent Context Awareness**: Learns from your coding patterns and project context
-- **Smart Auto-Completion**: Suggests code completions with 95% accuracy
-- **Pattern Recognition**: Identifies common coding patterns and suggests improvements
-- **Multi-language Support**: Works with React, TypeScript, Node.js, Python, and more
-- **Real-time Suggestions**: Provides instant feedback as you type
+Nexus AI is a revolutionary web-based platform that transforms how developers create applications. Built with Next.js 15 and TypeScript, it provides an intelligent coding environment where you can describe what you want and watch AI generate working code in real-time.
 
-### **🎯 Smart Debugging with AI Root Cause Analysis**
-- **Automatic Issue Detection**: Identifies bugs, performance issues, and security vulnerabilities
-- **AI-Powered Fix Suggestions**: Provides specific code fixes with explanations
-- **Root Cause Analysis**: Deep analysis of why issues occur and how to prevent them
-- **Performance Bottleneck Detection**: Finds and suggests optimizations for slow code
-- **Security Vulnerability Scanning**: Detects XSS, SQL injection, and other security issues
+## ✨ Key Features
 
-### **📊 Real-time Code Analytics & Insights**
-- **Live Code Quality Metrics**: Tracks complexity, maintainability, and technical debt
-- **Performance Scoring**: Real-time performance analysis and optimization suggestions
-- **Trend Analysis**: Monitors code quality trends over time
-- **Developer Productivity Insights**: Tracks coding patterns and productivity metrics
-- **Automated Reporting**: Generates comprehensive reports on code health
+### 🧠 **AI-Powered Code Generation**
+- **Natural Language to Code**: Describe your application in plain English and get working code
+- **Real-time Streaming**: Watch code generate live as you type
+- **Multi-language Support**: React, TypeScript, Node.js, Python, and more
+- **Context-Aware Suggestions**: AI learns from your project structure and coding patterns
 
-### **🔮 AI-Powered Code Refactoring Assistant**
-- **Intelligent Refactoring**: Suggests code improvements based on best practices
-- **Pattern-Based Refactoring**: Identifies and applies common refactoring patterns
-- **Performance Optimization**: Automatically suggests performance improvements
-- **Code Smell Detection**: Finds and fixes code smells and anti-patterns
-- **Safe Refactoring**: Ensures refactoring doesn't break existing functionality
-
-### **🎨 AI-Generated UI/UX Design System**
-- **Smart Component Generation**: Creates consistent UI components based on design patterns
-- **Responsive Design Automation**: Automatically generates responsive layouts
-- **Accessibility Compliance**: Ensures all generated components meet accessibility standards
-- **Design System Integration**: Maintains consistency across your entire application
-- **Visual Design Suggestions**: Provides design recommendations based on modern trends
-
-### **⚡ Performance Optimization Engine**
-- **Bundle Size Analysis**: Analyzes and optimizes your application bundle size
-- **Runtime Performance Monitoring**: Tracks real-time performance metrics
-- **Memory Leak Detection**: Identifies and fixes memory leaks automatically
-- **Network Optimization**: Optimizes API calls and data fetching patterns
-- **Caching Strategies**: Suggests optimal caching strategies for your application
-
-### **🔒 Advanced Security & Compliance Scanner**
-- **Vulnerability Detection**: Scans for security vulnerabilities in real-time
-- **Compliance Checking**: Ensures code meets industry security standards
-- **Dependency Security**: Analyzes third-party dependencies for security issues
-- **Code Injection Prevention**: Detects and prevents various injection attacks
-- **Security Best Practices**: Enforces security best practices automatically
-
-### **📱 Cross-Platform Code Generation**
-- **Single Codebase, Multiple Platforms**: Generate code for web, mobile, and desktop from one source
-- **Platform-Specific Optimization**: Automatically optimizes code for target platforms
-- **Native Code Generation**: Generates platform-specific native code
-- **Responsive Design**: Creates responsive designs that work across all devices
-- **Platform Integration**: Seamlessly integrates with platform-specific features
-
-### **🎓 Personalized Learning & Skill Development**
-- **AI-Powered Learning Paths**: Creates personalized learning paths based on your coding patterns
-- **Skill Gap Analysis**: Identifies areas where you can improve your coding skills
-- **Interactive Tutorials**: Generates interactive coding tutorials based on your projects
-- **Code Explanation Engine**: Provides detailed explanations of complex code concepts
-- **Best Practice Recommendations**: Suggests learning resources based on your current level
-
-### **🌐 AI-Powered Documentation Generator**
-- **Automatic Documentation**: Generates comprehensive documentation from your code
-- **API Documentation**: Creates detailed API documentation with examples
-- **Code Comments**: Suggests helpful comments and documentation
-- **README Generation**: Automatically generates project README files
-- **Documentation Maintenance**: Keeps documentation up-to-date with code changes
-
-### **🎤 Voice-to-Code Interface**
-- **Natural Language Programming**: Write code using voice commands and natural language
-- **Smart Voice Recognition**: Advanced speech-to-code conversion with context understanding
-- **Voice Templates**: Pre-built voice commands for common coding patterns
-- **Multi-language Voice Support**: Support for multiple languages and accents
-
-### **👥 AI-Powered Collaborative Coding**
-- **Real-time Collaboration**: Live collaborative coding with multiple developers
-- **AI Conflict Resolution**: Intelligent merge conflict resolution using AI
-- **Live Cursor Tracking**: See where team members are working in real-time
-- **Smart Suggestions**: AI-powered suggestions based on team collaboration patterns
-- **Session Management**: Create, join, and manage collaborative coding sessions
-
-### **🧠 Smart Code Templates**
-- **AI-Generated Templates**: Context-aware templates that learn from your patterns
-- **Dynamic Template Generation**: Generate templates based on project context
-- **Template Learning**: Templates improve over time based on usage patterns
-- **Multi-framework Support**: Templates for React, Vue, Angular, Node.js, Python, and more
-- **Custom Template Creation**: Create and share your own smart templates
-
-### **🔍 Advanced Code Review & Analysis**
-- **AI-Powered Code Review**: Comprehensive code analysis with security and performance insights
-- **Security Vulnerability Detection**: Automatic detection of security issues
-- **Performance Optimization**: AI suggestions for code optimization
-- **Best Practice Recommendations**: Intelligent suggestions for code improvements
-- **Real-time Feedback**: Instant feedback as you code
-
-### **⚡ Performance Prediction & Optimization**
-- **Performance Forecasting**: Predict application performance before deployment
-- **Bottleneck Detection**: Identify performance bottlenecks in your code
-- **Optimization Suggestions**: AI-powered optimization recommendations
-- **Resource Usage Analysis**: Monitor and optimize resource consumption
-
-### **🌍 Multi-language Translation & Localization**
-- **Code Comment Translation**: Automatically translate code comments to multiple languages
-- **Documentation Localization**: Translate documentation while preserving context
-- **UI Text Translation**: Localize user interface text automatically
-- **Context Preservation**: Maintain technical context during translation
-
-### **🔧 Advanced Git Integration**
-- **AI-Powered Commit Messages**: Generate meaningful commit messages automatically
-- **Smart Conflict Resolution**: AI-assisted merge conflict resolution
-- **Branch Management**: Intelligent branch naming and management
-- **Code Review Integration**: Automated code review suggestions
-
-### **🗄️ Smart Database Management**
-- **AI Schema Design**: Intelligent database schema design suggestions
-- **Query Optimization**: AI-powered SQL query optimization
-- **Migration Generation**: Automatic database migration generation
-- **Performance Monitoring**: Database performance analysis and optimization
-
-### **📊 Project Health Dashboard**
-- **Real-time Analytics**: Live project metrics and insights
-- **Code Quality Metrics**: Track code quality over time
-- **Team Productivity**: Monitor team collaboration and productivity
-- **Performance Tracking**: Track application performance metrics
-
-### **🔒 Security-First Development**
-- **Built-in Security Scanning**: Automatic security vulnerability detection
-- **Secure Coding Practices**: AI suggestions for secure coding patterns
-- **Dependency Analysis**: Security analysis of third-party dependencies
-- **Compliance Checking**: Automated compliance and security checks
-
-### **📱 Cross-Platform Development**
-- **Single Codebase**: Generate apps for web, mobile, and desktop from one codebase
-- **Platform-Specific Optimization**: Automatic platform-specific optimizations
-- **Native Code Generation**: Generate native code for different platforms
-- **Responsive Design**: Automatic responsive design generation
-
-### **🎓 AI Learning Assistant**
-- **Personalized Learning**: AI-powered learning paths based on your coding patterns
-- **Code Explanations**: Detailed explanations of complex code concepts
-- **Skill Development**: Personalized skill development recommendations
-- **Interactive Tutorials**: AI-generated interactive coding tutorials
-
-### **Core AI-Powered Development**
-- **Multi-Language Code Generation**: Support for React, Vue, Angular, Svelte, Node.js, Python, Go, Rust, Java, C#, PHP
-- **Intelligent Language Detection**: Automatically detects programming language from user input
-- **Multi-Model AI Support**: OpenAI GPT-5, Anthropic Claude, Google Gemini, Groq Kimi
-- **Real-time Code Streaming**: Live code generation with progress updates
-- **Conversation Memory**: Maintains context across multiple interactions
-
-### **Advanced Code Management**
-- **Surgical Code Editing**: Precise, targeted code modifications without full regeneration
-- **File Structure Analysis**: Intelligent file selection and context-aware editing
-- **Code Analysis & Debugging**: Comprehensive code structure breakdown and issue detection
-- **Performance & Security Scanning**: Built-in analysis tools for optimization and security
-- **Manual File Editing**: Direct file content editing within the application
-
-### **Modern Development Tools**
-- **Live Development Environment**: Real-time sandbox with Vite and hot reload
+### 🎯 **Smart Development Tools**
+- **Live Code Editor**: Integrated code editor with syntax highlighting
+- **File Management**: Create, edit, and organize project files seamlessly
 - **Package Management**: Automatic dependency detection and installation
-- **Git Integration**: Repository initialization and version control
-- **Terminal Commands**: Execute commands directly within the application
-- **Code Formatting**: Automatic code formatting and style consistency
-- **Testing Framework**: Built-in test execution and coverage reporting
+- **Real-time Preview**: See your application running instantly
 
-### **Website Cloning & Recreation**
-- **Website Scraping**: Clone any website and recreate it as a modern React app
-- **Content Preservation**: Maintain original styling, structure, and functionality
-- **Image Processing**: Handle images and media from scraped content
-- **Responsive Design**: Mobile-first responsive layouts
+### 🔧 **Advanced AI Capabilities**
+- **Code Analysis**: AI-powered code review and optimization suggestions
+- **Bug Detection**: Automatic error detection and fix suggestions
+- **Performance Insights**: Real-time performance analysis and recommendations
+- **Security Scanning**: Built-in security vulnerability detection
 
-### **Advanced Features**
-- **Image Analysis**: Paste images for AI analysis and error evaluation
-- **File Upload Management**: Drag & drop file uploads with processing
-- **Application Download**: Export complete applications as ZIP files
-- **Template System**: Pre-built templates for common application types
-- **Deployment Integration**: Deploy to Vercel, Netlify, Railway, Render, Heroku
-- **Code History & Refactoring**: Track changes and suggest improvements
+### 🎨 **Modern UI/UX**
+- **Responsive Design**: Works perfectly on desktop and mobile
+- **Dark/Light Themes**: Customizable interface themes
+- **Intuitive Interface**: Clean, modern design focused on productivity
+- **Real-time Collaboration**: Multiple developers can work together
 
-### **Developer Experience**
-- **Cursor-like Interface**: Professional IDE layout with file explorer, code editor, and chat
-- **Real-time Collaboration**: Live updates and shared development environment
-- **Error Handling**: Comprehensive error detection and resolution
-- **Performance Monitoring**: Bundle analysis and optimization suggestions
-- **Accessibility**: Built-in accessibility scanning and improvements
-
-## 🛠️ Technology Stack
+## 🛠️ Tech Stack
 
 - **Frontend**: Next.js 15, React 19, TypeScript
-- **Styling**: Tailwind CSS 4, Framer Motion
-- **AI Integration**: OpenAI, Anthropic, Google AI, Groq
-- **Development Environment**: E2B Sandbox, Vite
-- **Package Management**: NPM/PNPM
-- **Deployment**: Vercel, Netlify, Railway, Render, Heroku
+- **Styling**: Tailwind CSS, Framer Motion
+- **AI Integration**: OpenAI GPT-5, Anthropic Claude, Groq AI
+- **Development**: E2B Sandbox, Vite
+- **Database**: Supabase
+- **Deployment**: Vercel-ready
 
-## 📦 Installation
+## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
-- NPM or PNPM
-- API keys for AI providers
+- npm or pnpm
+- Git
 
-### Setup
+### Installation
 
-1. **Install Dependencies**
-```bash
-npm install
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/MrHanan-dev/Nexus_AI_Coding.git
+   cd Nexus_AI_Coding
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Add your AI API keys:
+   ```env
+   OPENAI_API_KEY=your_openai_key
+   ANTHROPIC_API_KEY=your_anthropic_key
+   GROQ_API_KEY=your_groq_key
+   SUPABASE_URL=your_supabase_url
+   SUPABASE_ANON_KEY=your_supabase_key
+   ```
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   pnpm dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🎯 How to Use
+
+### 1. **Describe Your Application**
+Type a description of what you want to build:
+```
+"Create a modern e-commerce website with product listings, shopping cart, and user authentication"
 ```
 
-2. **Environment Configuration**
-Create `.env.local` with your API keys:
-```env
-# Required
-E2B_API_KEY=your_e2b_api_key                    # Get from https://e2b.dev
-NEXUSAI_API_KEY=your_nexusai_api_key        # Get from https://nexusai.dev
+### 2. **Watch AI Generate Code**
+The AI will analyze your request and generate:
+- Complete React components
+- API routes and backend logic
+- Database schemas
+- Styling with Tailwind CSS
 
-# AI Providers (need at least one)
-ANTHROPIC_API_KEY=your_anthropic_api_key        # Get from https://console.anthropic.com
-OPENAI_API_KEY=your_openai_api_key              # Get from https://platform.openai.com
-GEMINI_API_KEY=your_gemini_api_key              # Get from https://aistudio.google.com
-GROQ_API_KEY=your_groq_api_key                  # Get from https://console.groq.com
+### 3. **Real-time Preview**
+See your application running instantly in the integrated preview panel
+
+### 4. **Iterate and Improve**
+Make changes, ask for modifications, and watch the AI update your code in real-time
+
+## 📁 Project Structure
+
 ```
-
-3. **Start Development Server**
-```bash
-npm run dev
+Nexus_AI_Coding/
+├── app/                    # Next.js app directory
+│   ├── api/               # API routes
+│   │   ├── ai/           # AI-powered endpoints
+│   │   ├── integrations/ # Third-party integrations
+│   │   └── ...           # Other API routes
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Main application page
+├── components/            # React components
+│   ├── ui/              # Reusable UI components
+│   └── ...              # Feature components
+├── lib/                  # Utility libraries
+│   ├── ai/              # AI integration modules
+│   ├── integrations/    # Third-party integrations
+│   └── ...              # Other utilities
+├── types/               # TypeScript type definitions
+├── config/              # Configuration files
+└── docs/                # Documentation
 ```
-
-4. **Access Application**
-Open [http://localhost:3000](http://localhost:3000)
-
-## 🎯 Usage Guide
-
-### **Getting Started**
-1. **Choose AI Model**: Select from available AI providers in the chat panel
-2. **Select Language**: Choose your preferred programming language
-3. **Describe Your Project**: Tell the AI what you want to build
-4. **Watch Generation**: Real-time code generation with live preview
-5. **Edit & Refine**: Make surgical edits and improvements
-
-### **Advanced Workflows**
-
-#### **Website Cloning**
-```
-"Clone https://example.com and recreate it as a React app"
-```
-
-#### **Multi-Language Development**
-```
-"Create a Python Flask API with user authentication"
-"Build a Go microservice for data processing"
-"Develop a React dashboard with TypeScript"
-```
-
-#### **Code Editing**
-```
-"Change the header background to blue"
-"Add a contact form to the footer"
-"Fix the responsive layout for mobile"
-```
-
-#### **Image Analysis**
-- Paste images directly into chat
-- AI analyzes for errors, UI feedback, or implementation guidance
-- Get specific code suggestions based on visual content
-
-### **Development Features**
-
-#### **File Management**
-- **File Explorer**: Browse and manage project structure
-- **Code Editor**: Direct file editing with syntax highlighting
-- **Search & Replace**: Find references and make bulk changes
-- **File Upload**: Drag & drop files for analysis
-
-#### **Debugging & Analysis**
-- **Code Analysis**: Get detailed structure breakdown
-- **Performance Metrics**: Bundle size, load times, optimization
-- **Security Scanning**: Vulnerability detection and fixes
-- **Accessibility**: WCAG compliance checking
-
-#### **Deployment**
-- **One-Click Deploy**: Deploy to multiple platforms
-- **Environment Setup**: Automatic configuration
-- **Domain Management**: Custom domain integration
-- **Monitoring**: Performance and error tracking
 
 ## 🔧 Configuration
 
-### **AI Model Selection**
-- **OpenAI GPT-5**: Advanced reasoning and complex tasks
-- **Anthropic Claude**: Creative and analytical capabilities
-- **Google Gemini**: Multimodal understanding
-- **Groq Kimi**: Fast inference and real-time generation
+### AI Models
+The platform supports multiple AI models:
+- **OpenAI GPT-5**: Latest GPT model for code generation
+- **Anthropic Claude**: Advanced reasoning and analysis
+- **Groq AI**: Fast inference for real-time responses
 
-### **Language Support**
-- **Frontend**: React, Vue, Angular, Svelte
-- **Backend**: Node.js, Python, Go, Rust, Java, C#
-- **Full Stack**: PHP, .NET, Django, Express
-
-### **Development Environment**
-- **Sandbox**: Isolated development environment
-- **Hot Reload**: Instant code updates
-- **Package Management**: Automatic dependency handling
-- **Build Tools**: Vite, Webpack, Rollup support
-
-## 📊 Performance & Monitoring
-
-### **Real-time Metrics**
-- **Generation Speed**: Code generation performance
-- **Memory Usage**: Resource utilization tracking
-- **Error Rates**: Failure detection and reporting
-- **User Analytics**: Usage patterns and optimization
-
-### **Quality Assurance**
-- **Code Quality**: Linting and style checking
-- **Test Coverage**: Automated testing and validation
-- **Security Scanning**: Vulnerability assessment
-- **Performance Optimization**: Bundle analysis and improvements
+### Customization
+- Modify `config/app.config.ts` to adjust AI settings
+- Update `tailwind.config.ts` for custom styling
+- Configure integrations in `lib/integrations/`
 
 ## 🤝 Contributing
 
-This is a proprietary application developed by Muhammad Hanan. For feature requests or bug reports, please contact the developer directly.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
+### Development Setup
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- **AI Providers**: OpenAI, Anthropic, Google, Groq for powerful AI capabilities
-- **Development Tools**: Next.js, React, TypeScript, Tailwind CSS
-- **Infrastructure**: E2B for cloud development environments
-- **Community**: Open source contributors and the developer community
+- Built with [Next.js](https://nextjs.org/)
+- AI powered by [OpenAI](https://openai.com/), [Anthropic](https://anthropic.com/), and [Groq](https://groq.com/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Icons from [Lucide React](https://lucide.dev/)
+
+## 📞 Support
+
+- **Issues**: [GitHub Issues](https://github.com/MrHanan-dev/Nexus_AI_Coding/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/MrHanan-dev/Nexus_AI_Coding/discussions)
+- **Email**: [Your Email]
 
 ---
 
-**Developed with ❤️ by Muhammad Hanan**
+**Built with ❤️ by [Muhammad Hanan](https://github.com/MrHanan-dev)**
 
-*Nexus AI - Where ideas become reality through intelligent code generation.*
+*The future of coding is here, and it's powered by AI.*
