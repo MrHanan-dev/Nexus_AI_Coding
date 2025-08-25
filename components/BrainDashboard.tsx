@@ -191,7 +191,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                   <h3 className="text-lg font-semibold text-white">Learning Progress</h3>
                 </div>
                 <div className="space-y-3">
-                  {learningInsights.userProgress.map((user, index) => (
+                  {learningInsights.userProgress.map((user: { id: string; skill_level: string; mastered_concepts: number; areas_of_improvement: number }, index) => (
                     <div key={user.id || index} className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-gray-400">Skill Level:</span>
@@ -475,7 +475,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                 <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">User Progress Insights</h3>
                   <div className="space-y-4">
-                    {learningInsights.userProgress.map((user, index) => (
+                    {learningInsights.userProgress.map((user: { id: string; skill_level: string; mastered_concepts: number; areas_of_improvement: number }, index) => (
                       <div key={user.id || index} className="bg-gray-700 rounded p-4">
                         <div className="flex justify-between items-center mb-3">
                           <span className="text-sm font-medium text-white">
