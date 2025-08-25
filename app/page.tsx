@@ -2034,8 +2034,9 @@ Tip: I automatically detect and install npm packages from your code imports (lik
       
       // Optimized API call with minimal context for faster response
       console.log('[sendChatMessage] Sending optimized request to API...');
+      console.log('[sendChatMessage] Detected language for API:', languageDetection.language);
       
-            // Create a timeout controller for the fetch request
+      // Create a timeout controller for the fetch request
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 45000); // 45 second timeout
       
@@ -2051,7 +2052,10 @@ Tip: I automatically detect and install npm packages from your code imports (lik
               sandboxId: sandboxData?.sandboxId || (sandboxCreating ? 'pending' : null),
               sandboxUrl: sandboxData?.url,
               sandboxCreating: sandboxCreating,
-              isEdit: isEdit
+              isEdit: isEdit,
+              detectedLanguage: languageDetection.language,
+              languageConfidence: languageDetection.confidence,
+              languageReason: languageDetection.reason
             },
             isEdit: isEdit
           }),
