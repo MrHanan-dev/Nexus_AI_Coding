@@ -84,10 +84,10 @@ const LanguageIndicator: React.FC<LanguageIndicatorProps> = ({
 
   return (
     <div className={`flex items-center gap-1 ${className}`}>
-      <IconComponent 
-        size={size}
-        style={{ color }}
-      />
+             <IconComponent 
+         size={size}
+         color={color}
+       />
       {showName && (
         <span className="text-xs text-gray-300">
           {languageName}
