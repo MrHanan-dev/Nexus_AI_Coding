@@ -2,9 +2,20 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import crypto from 'crypto';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2025-07-30.basil',
-});
+// Initialize Stripe client safely
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+let stripe: Stripe | null = null;
+
+if (stripeSecretKey && stripeSecretKey.trim() !== '') {
+  try {
+    stripe = new Stripe(stripeSecretKey, {
+      apiVersion: '2025-07-30.basil',
+    });
+  } catch (error) {
+    console.error('Failed to initialize Stripe client:', error);
+    stripe = null;
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,7 +26,7 @@ export async function POST(request: NextRequest) {
     let event: Stripe.Event;
 
     // Verify webhook signature
-    if (signature && webhookSecret) {
+    if (signature && webhookSecret && stripe) {
       try {
         event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
       } catch (err) {

@@ -3,9 +3,19 @@ import { Octokit } from '@octokit/rest';
 
 // Initialize GitHub client
 const githubToken = process.env.GITHUB_PERSONAL_ACCESS_TOKEN;
-const octokit = githubToken ? new Octokit({
-  auth: githubToken,
-}) : null;
+let octokit: Octokit | null = null;
+
+// Only initialize if token is available
+if (githubToken && githubToken.trim() !== '') {
+  try {
+    octokit = new Octokit({
+      auth: githubToken,
+    });
+  } catch (error) {
+    console.error('Failed to initialize GitHub client:', error);
+    octokit = null;
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
