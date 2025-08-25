@@ -84,6 +84,22 @@ export function detectLanguage(
     ]
   };
 
+  // Special handling for portfolio requests with explicit language mentions
+  if (input.includes('portfolio') || input.includes('webportfolio')) {
+    // Check if a specific language was mentioned
+    for (const [langKey, langConfig] of Object.entries(supportedLanguages)) {
+      const langName = (langConfig as any).name.toLowerCase();
+      if (input.includes(langKey) || input.includes(langName)) {
+        return {
+          language: langKey,
+          confidence: 0.98,
+          reason: `Portfolio request with explicit language: ${(langConfig as any).name}`,
+          keywords: [langKey, langName, 'portfolio']
+        };
+      }
+    }
+  }
+
   // Check for explicit language mentions with higher priority
   for (const [langKey, patterns] of Object.entries(enhancedPatterns)) {
     const foundKeywords: string[] = [];
@@ -123,7 +139,7 @@ export function detectLanguage(
   // Context-aware detection based on application type
   const applicationPatterns = {
     // Frontend/Web applications
-    frontend: ['website', 'web app', 'frontend', 'ui', 'user interface', 'landing page', 'portfolio', 'dashboard', 'admin panel'],
+    frontend: ['website', 'web app', 'frontend', 'ui', 'user interface', 'landing page', 'dashboard', 'admin panel'],
     // Backend/API applications
     backend: ['api', 'backend', 'server', 'database', 'rest api', 'graphql', 'microservice', 'authentication', 'authorization'],
     // Data Science/Machine Learning
@@ -172,7 +188,9 @@ export function detectLanguage(
           break;
       }
       
-      if (suggestedLanguage && !bestMatch.language || bestMatch.confidence < 0.6) {
+      // Only apply application type suggestion if no explicit language was mentioned
+      // and if the confidence is lower than the current best match
+      if (suggestedLanguage && bestMatch.confidence < 0.6) {
         bestMatch = {
           language: suggestedLanguage,
           confidence: 0.7,
