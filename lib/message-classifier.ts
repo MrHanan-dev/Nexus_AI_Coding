@@ -1,3 +1,5 @@
+import { detectLanguage, type LanguageDetectionResult } from '@/lib/language-detector';
+
 export interface MessageIntent {
   shouldGenerateCode: boolean;
   intent: 'greeting' | 'question' | 'code_request' | 'command' | 'general' | 'clarification';
@@ -964,50 +966,7 @@ export class MessageClassifier {
     'why must you', 'why must it', 'why must that', 'why must this', 'why must they', 'why must we'
   ];
 
-  // Language detection methods
-  private static detectLanguage(message: string): string | undefined {
-    const languagePatterns = {
-      'javascript': /(javascript|js|es6|es2015|es2016|es2017|es2018|es2019|es2020|es2021|es2022|es2023|esnext|vanilla javascript|pure javascript|node\.js|nodejs|deno|react|vue|angular|jquery|lodash|express|next\.js|nextjs|nuxt|gatsby)/i,
-      'typescript': /(typescript|ts|typed javascript|type safe javascript)/i,
-      'python': /(python|py|python3|python 3|py3|django|flask|fastapi|bottle|tornado|aiohttp|pandas|numpy|scipy|matplotlib|seaborn|plotly|jupyter|anaconda|conda|pip|virtualenv|venv)/i,
-      'java': /(java|jdk|jre|spring|spring boot|springboot|quarkus|micronaut|maven|gradle|android|kotlin|jvm|jre|jdk|javafx|swing|awt|servlet|jsp|jpa|hibernate|mybatis)/i,
-      'c#': /(c#|csharp|\.net|dotnet|asp\.net|aspnet|blazor|xamarin|wpf|winforms|uwp|entity framework|ef|linq|nuget|msbuild|visual studio|vs code)/i,
-      'c++': /(c\+\+|cpp|c\+\+ 17|c\+\+ 20|c\+\+ 23|modern c\+\+|stl|boost|qt|wxwidgets|gtk|opengl|directx|vulkan|cmake|make|gcc|clang|msvc)/i,
-      'php': /(php|laravel|symfony|codeigniter|yii|cakephp|zend|composer|pear|xampp|wamp|lamp|wordpress|drupal|joomla|magento|shopify)/i,
-      'ruby': /(ruby|rb|rails|sinatra|hanami|grape|jekyll|middleman|bundler|gem|rake|rspec|capybara|devise|pundit|sidekiq|redis)/i,
-      'go': /(go|golang|gin|echo|fiber|chi|mux|beego|gorilla|cobra|viper|gorm|sqlx|testify|gomock|air|delve|pprof|race|vet|fmt)/i,
-      'rust': /(rust|actix|rocket|warp|axum|tonic|serde|tokio|async|futures|cargo|crates|crate\.io|rustup|rustc|clippy|rustfmt|cargo test|cargo build)/i,
-      'swift': /(swift|ios|xcode|cocoa|swiftui|uikit|appkit|core data|core animation|spritekit|scenekit|metal|arkit|core ml|vision|healthkit|cloudkit|storekit)/i,
-      'kotlin': /(kotlin|android|android studio|jetpack|compose|room|retrofit|okhttp|glide|picasso|dagger|hilt|coroutines|flow|livedata|viewmodel|navigation|paging|workmanager)/i,
-      'dart': /(dart|flutter|material|cupertino|widget|state management|provider|bloc|riverpod|getx|mobx|redux|fish redux|hooks|inherited widget|context|buildcontext)/i,
-      'html': /(html|html5|semantic html|accessibility|aria|seo|meta tags|head|body|div|span|section|article|nav|header|footer|main|aside|figure|figcaption)/i,
-      'css': /(css|scss|sass|less|stylus|postcss|tailwind|bootstrap|bulma|foundation|semantic ui|material ui|ant design|chakra ui|mantine|headless ui|radix ui|framer motion|styled components|emotion|css modules|css in js)/i,
-      'sql': /(sql|mysql|postgresql|postgres|sqlite|oracle|sql server|mariadb|mongodb|redis|elasticsearch|cassandra|dynamodb|firestore|prisma|sequelize|typeorm|mongoose|knex|bookshelf|drizzle|supabase|firebase)/i,
-      'scala': /(scala|akka|play|spark|kafka|zookeeper|sbt|maven|gradle|cats|scalaz|zio|http4s|finagle|lagom|lift|spray|slick|quill|doobie)/i,
-      'r': /(r|rstudio|tidyverse|ggplot2|dplyr|tidyr|readr|purrr|tibble|stringr|forcats|lubridate|shiny|rmarkdown|knitr|bookdown|blogdown|plumber|caret|mlr|randomforest|xgboost|tensorflow|keras)/i,
-      'matlab': /(matlab|simulink|matlab toolbox|matlab functions|matlab scripts|matlab gui|matlab app designer|matlab compiler|matlab coder|matlab engine|matlab api|matlab web server)/i,
-      'julia': /(julia|jupyter|pluto|revise|pkg|package manager|julia packages|flux|turing|genie|franklin|documenter|test|benchmark|profile|debug|repl|shell|help|docs)/i,
-      'haskell': /(haskell|ghc|cabal|stack|hackage|stackage|ghci|haddock|quickcheck|hspec|aeson|lens|parsec|attoparsec|text|bytestring|vector|conduit|pipes|mtl|transformers)/i,
-      'clojure': /(clojure|clojurescript|leiningen|boot|deps\.edn|reagent|re-frame|om|fulcro|pedestal|compojure|ring|hiccup|enlive|selmer|korma|honeysql|core\.async|core\.logic|core\.match)/i,
-      'elixir': /(elixir|phoenix|ecto|plug|cowboy|gen server|supervisor|otp|mix|hex|exunit|doctest|iex|observer|dialyzer|ex doc|credo|sobelow|absinthe|graphql|liveview|heex|surface)/i,
-      'erlang': /(erlang|otp|gen server|supervisor|application|behaviour|mnesia|ets|dets|gen tcp|gen udp|ranch|cowboy|rebar3|mix|hex|eunit|common test|dialyzer|observer|debugger|profiler)/i,
-      'f#': /(f#|fsharp|\.net|dotnet|asp\.net|aspnet|blazor|xamarin|wpf|winforms|uwp|entity framework|ef|linq|nuget|msbuild|visual studio|vs code|paket|fake|ionide|fslab|deedle|mathnet|suave|giraffe|saturn)/i,
-      'ocaml': /(ocaml|opam|dune|merlin|utop|ocamlfind|ocamlbuild|ocamlc|ocamlopt|ocamldoc|ocamldep|ocamllex|ocamlyacc|menhir|ppx|reason|bucklescript|revery|onivim|coq|frama-c|alt-ergo)/i,
-      'nim': /(nim|nimble|choosenim|nimscript|nim c|nim cpp|nim js|nim vm|nimble install|nimble build|nimble test|nimble run|nimble doc|nimble init|nimble publish|nimble search|nimble list|nimble path|nimble dump|nimble check)/i,
-      'crystal': /(crystal|crystal build|crystal run|crystal spec|crystal docs|crystal tool|crystal init|crystal eval|crystal play|crystal deps|crystal install|crystal update|crystal remove|crystal list|crystal search|crystal info|crystal version|crystal env|crystal help)/i,
-      'zig': /(zig|zig build|zig run|zig test|zig fmt|zig ast-check|zig translate-c|zig targets|zig version|zig env|zig help|zig init-exe|zig init-lib|zig build-exe|zig build-lib|zig build-obj|zig build-translate-c|zig build-run|zig build-test|zig build-docs)/i,
-      'v': /(v|vlang|v run|v build|v test|v fmt|v vet|v doc|v repl|v up|v install|v search|v init|v new|v translate|v generate|v create|v mod|v mod init|v mod tidy|v mod vendor|v mod graph|v mod why|v mod download|v mod edit|v mod verify)/i,
-      'odin': /(odin|odin build|odin run|odin test|odin check|odin doc|odin fmt|odin vendor|odin build-exe|odin build-shared|odin build-obj|odin build-dll|odin build-static|odin build-dynamic|odin build-debug|odin build-release|odin build-optimized|odin build-unoptimized|odin build-fast|odin build-slow)/i,
-      'vlang': /(vlang|v|v run|v build|v test|v fmt|v vet|v doc|v repl|v up|v install|v search|v init|v new|v translate|v generate|v create|v mod|v mod init|v mod tidy|v mod vendor|v mod graph|v mod why|v mod download|v mod edit|v mod verify)/i
-    };
 
-    for (const [language, pattern] of Object.entries(languagePatterns)) {
-      if (pattern.test(message)) {
-        return language;
-      }
-    }
-    return undefined;
-  }
 
   private static extractLanguagePreferences(message: string): string[] {
     const preferences: string[] = [];
@@ -1092,8 +1051,9 @@ export class MessageClassifier {
     const words = lowerMessage.split(/\s+/);
     console.log('[MessageClassifier] Lower message:', lowerMessage);
     
-    // Detect language preferences
-    const detectedLanguage = this.detectLanguage(lowerMessage);
+    // Detect language preferences using the main language detector
+    const languageDetection = detectLanguage(lowerMessage);
+    const detectedLanguage = languageDetection.language;
     const languagePreferences = this.extractLanguagePreferences(lowerMessage);
     
     // Cursor-like behavior: Very short messages are always conversational
@@ -1141,6 +1101,28 @@ export class MessageClassifier {
         languagePreferences
       };
     }
+
+    // Cursor-like behavior: Check for specific portfolio creation patterns FIRST (highest priority)
+    const portfolioPatterns = [
+      /creat\s+(?:a\s+)?(?:full\s+stack\s+)?(?:web)?portfolio/i,
+      /build\s+(?:a\s+)?(?:full\s+stack\s+)?(?:web)?portfolio/i,
+      /make\s+(?:a\s+)?(?:full\s+stack\s+)?(?:web)?portfolio/i,
+      /generate\s+(?:a\s+)?(?:full\s+stack\s+)?(?:web)?portfolio/i,
+      /develop\s+(?:a\s+)?(?:full\s+stack\s+)?(?:web)?portfolio/i
+    ];
+    
+    if (portfolioPatterns.some(pattern => pattern.test(lowerMessage))) {
+      console.log('[MessageClassifier] Found portfolio creation request - HIGH PRIORITY');
+      return {
+        shouldGenerateCode: true,
+        intent: 'code_request',
+        confidence: 0.98,
+        detectedLanguage,
+        languagePreferences
+      };
+    }
+
+
 
     // Cursor-like behavior: Check for "please" requests that are clearly code generation
     if (lowerMessage.startsWith('please')) {
@@ -1698,7 +1680,9 @@ export class MessageClassifier {
       return {
         shouldGenerateCode: true,
         intent: 'code_request',
-        confidence: 0.95
+        confidence: 0.95,
+        detectedLanguage,
+        languagePreferences
       };
     }
 
@@ -1803,6 +1787,9 @@ export class MessageClassifier {
           languagePreferences
         };
       }
+      
+
+      
       // Otherwise, ask for clarification
       return {
         shouldGenerateCode: false,
