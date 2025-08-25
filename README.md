@@ -2,6 +2,8 @@
 
 **The intelligent nexus between your ideas and working code. Generate, edit, and deploy applications with AI assistance.**
 
+<!-- Updated for Vercel deployment -->
+
 ![Nexus AI Platform](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![AI Powered](https://img.shields.io/badge/AI-Powered-10B981?style=for-the-badge&logo=openai)
