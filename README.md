@@ -13,6 +13,12 @@
 
 Nexus AI is a revolutionary web-based platform that transforms how developers create applications. Built with Next.js 15 and TypeScript, it provides an intelligent coding environment where you can describe what you want and watch AI generate working code in real-time.
 
+
+
+https://github.com/user-attachments/assets/137acfa7-e381-4667-914e-ec22768501da
+
+
+
 ## ✨ Key Features
 
 ### 🧠 **AI-Powered Code Generation**
