@@ -1522,7 +1522,8 @@ It's better to have 3 complete files than 10 incomplete files.`
         }
         } catch (streamError) {
           console.error('[generate-ai-code-stream] Streaming error:', streamError);
-          await sendProgress({ type: 'error', error: `Streaming failed: ${streamError.message}` });
+          const errorMessage = streamError instanceof Error ? streamError.message : String(streamError);
+          await sendProgress({ type: 'error', error: `Streaming failed: ${errorMessage}` });
           throw streamError;
         }
         
