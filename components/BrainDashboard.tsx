@@ -136,7 +136,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
             { id: 'learning', label: 'Learning', icon: FiBook },
             { id: 'performance', label: 'Performance', icon: FiActivity },
             { id: 'insights', label: 'Insights', icon: FiTarget }
-          ].map((tab) => (
+                     ].map((tab: { id: string; label: string; icon: any }) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
@@ -281,7 +281,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                 <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Recent Memories</h3>
                   <div className="space-y-3 max-h-64 overflow-y-auto">
-                    {learningInsights.recentMemories.slice(0, 5).map((memory, index) => (
+                                         {learningInsights.recentMemories.slice(0, 5).map((memory: BrainMemory, index: number) => (
                       <div key={memory.id} className="bg-gray-700 rounded p-3">
                         <div className="flex justify-between items-start mb-2">
                           <span className="text-xs bg-purple-600 text-white px-2 py-1 rounded">
@@ -298,7 +298,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                           }
                         </p>
                         <div className="flex gap-1 mt-2">
-                          {memory.tags.slice(0, 3).map((tag, tagIndex) => (
+                                                     {memory.tags.slice(0, 3).map((tag: string, tagIndex: number) => (
                             <span key={tagIndex} className="text-xs bg-gray-600 text-gray-300 px-2 py-1 rounded">
                               {tag}
                             </span>
@@ -312,7 +312,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                 <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Memory Types</h3>
                   <div className="space-y-3">
-                    {Object.entries(aiBrain.getMemoryStats().byType).map(([type, count]) => (
+                                         {Object.entries(aiBrain.getMemoryStats().byType).map(([type, count]: [string, number]) => (
                       <div key={type} className="flex justify-between items-center">
                         <span className="text-gray-400 capitalize">{type.replace('_', ' ')}:</span>
                         <span className="text-white font-medium">{count}</span>
@@ -353,7 +353,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                 <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Top Learning Patterns</h3>
                   <div className="space-y-4">
-                    {learningInsights.topPatterns.map((pattern, index) => (
+                                         {learningInsights.topPatterns.map((pattern: LearningPattern, index: number) => (
                       <div key={pattern.id} className="bg-gray-700 rounded p-4">
                         <div className="flex justify-between items-start mb-2">
                           <span className="text-sm font-medium text-white">
@@ -377,7 +377,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                           <div className="mt-3 pt-3 border-t border-gray-600">
                             <p className="text-xs text-gray-400 mb-1">Improvements:</p>
                             <div className="space-y-1">
-                              {pattern.improvements.slice(0, 2).map((improvement, idx) => (
+                                                             {pattern.improvements.slice(0, 2).map((improvement: string, idx: number) => (
                                 <p key={idx} className="text-xs text-gray-300">• {improvement}</p>
                               ))}
                             </div>
@@ -394,7 +394,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                     <div className="bg-gray-700 rounded p-4">
                       <h4 className="text-sm font-medium text-white mb-3">Improvement Suggestions</h4>
                       <div className="space-y-2">
-                        {learningInsights.improvementSuggestions.map((suggestion, index) => (
+                        {learningInsights.improvementSuggestions.map((suggestion: string, index: number) => (
                           <div key={index} className="flex items-start gap-2">
                             <FiTarget className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
                             <p className="text-sm text-gray-300">{suggestion}</p>
@@ -406,7 +406,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                     <div className="bg-gray-700 rounded p-4">
                       <h4 className="text-sm font-medium text-white mb-3">Current Focus Areas</h4>
                       <div className="flex flex-wrap gap-2">
-                        {['code_generation', 'user_interaction', 'error_prevention'].map((focus) => (
+                        {['code_generation', 'user_interaction', 'error_prevention'].map((focus: string) => (
                           <span key={focus} className="text-xs bg-purple-600 text-white px-2 py-1 rounded">
                             {focus.replace('_', ' ')}
                           </span>
@@ -425,7 +425,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                 <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Response Time Trends</h3>
                   <div className="space-y-3">
-                    {brainStatus.performance.response_time.slice(-10).map((time, index) => (
+                    {brainStatus.performance.response_time.slice(-10).map((time: number, index: number) => (
                       <div key={index} className="flex items-center gap-3">
                         <div className="w-16 text-xs text-gray-400">
                           #{brainStatus.performance.response_time.length - 10 + index + 1}
@@ -447,7 +447,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                 <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Accuracy Trends</h3>
                   <div className="space-y-3">
-                    {brainStatus.performance.accuracy_rate.slice(-10).map((accuracy, index) => (
+                    {brainStatus.performance.accuracy_rate.slice(-10).map((accuracy: number, index: number) => (
                       <div key={index} className="flex items-center gap-3">
                         <div className="w-16 text-xs text-gray-400">
                           #{brainStatus.performance.accuracy_rate.length - 10 + index + 1}
@@ -506,7 +506,7 @@ export default function BrainDashboard({ isOpen, onClose }: BrainDashboardProps)
                     <div className="bg-gray-700 rounded p-4">
                       <h4 className="text-sm font-medium text-white mb-3">Learning Focus</h4>
                       <div className="space-y-2">
-                        {learningInsights.improvementSuggestions.map((suggestion, index) => (
+                        {learningInsights.improvementSuggestions.map((suggestion: string, index: number) => (
                           <div key={index} className="flex items-start gap-2">
                             <FiAward className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
                             <p className="text-sm text-gray-300">{suggestion}</p>
